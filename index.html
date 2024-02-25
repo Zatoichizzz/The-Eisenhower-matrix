@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Матрица Эйзенхауэра</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Матрица Эйзенхауэра</h1>
+        </div>
+        <div class="tasks">
+            <div class="quadrant" id="quadrant1">
+                <h2>Важно и срочно <span class="emoji">🔥</span></h2>
+                <ul class="sortable" id="sortable1"></ul>
+                <div class="add-task">
+                    <input type="text" id="task-input-1" placeholder="Добавить задачу">
+                    <button onclick="addTask('sortable1')"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="quadrant" id="quadrant2">
+                <h2>Важно, но не срочно <span class="emoji">🚀</span></h2>
+                <ul class="sortable" id="sortable2"></ul>
+                <div class="add-task">
+                    <input type="text" id="task-input-2" placeholder="Добавить задачу">
+                    <button onclick="addTask('sortable2')"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="quadrant" id="quadrant3">
+                <h2>Не важно, но срочно <span class="emoji">🚨</span></h2>
+                <ul class="sortable" id="sortable3"></ul>
+                <div class="add-task">
+                    <input type="text" id="task-input-3" placeholder="Добавить задачу">
+                    <button onclick="addTask('sortable3')"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="quadrant" id="quadrant4">
+                <h2>Не важно и не срочно <span class="emoji">💡</span></h2>
+                <ul class="sortable" id="sortable4"></ul>
+                <div class="add-task">
+                    <input type="text" id="task-input-4" placeholder="Добавить задачу">
+                    <button onclick="addTask('sortable4')"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="progress-bar-container">
+            <h2>Шкала эффективности</h2>
+            <div class="progress-bar"></div>
+        </div>
+        <div class="motivation-message-container">
+            <!-- Здесь будут появляться мотивационные сообщения -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

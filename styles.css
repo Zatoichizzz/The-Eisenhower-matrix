@@ -1,0 +1,309 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a23; /* Цвет фона в ночном режиме */
+    color: #fff; /* Цвет текста в ночном режиме */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #111; /* Цвет контейнера в ночном режиме */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Тень контейнера */
+}
+
+.header h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff; /* Цвет заголовка */
+}
+
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.quadrant {
+    padding: 20px;
+    background-color: #222; /* Цвет квадранта в ночном режиме */
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1); /* Тень квадранта */
+    transition: transform 0.3s ease;
+}
+
+.quadrant:hover {
+    transform: translateY(-5px);
+}
+
+.quadrant h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #fff; /* Цвет заголовка квадранта */
+}
+
+.emoji {
+    margin-left: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.add-task {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.quadrant:hover .add-task {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.add-task input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #777; /* Цвет рамки поля ввода */
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    background-color: #333; /* Цвет фона поля ввода */
+    color: #fff; /* Цвет текста поля ввода */
+}
+
+.add-task button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task button:hover {
+    background-color: #0056b3;
+}
+
+.progress-bar-container {
+    background-color: #333; /* Цвет фона контейнера прогресс-бара */
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 5px;
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.motivation-message-container {
+    position: relative;
+}
+
+.motivation-message {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.motivation-message.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Ночной стиль */
+.starry-night {
+    background-image: url('https://i.imgur.com/Hw1l0cr.jpg'); /* Звездное небо */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cloud {
+    position: absolute;
+    background-image: url('https://i.imgur.com/0zGCKX9.png'); /* Изображение облака */
+    background-size: contain;
+    width: 100px;
+    height: 60px;
+}
+
+.cloud1 {
+    top: 30px;
+    left: 50px;
+}
+
+.cloud2 {
+    top: 80px;
+    left: 200px;
+}
+
+.cloud3 {
+    top: 120px;
+    left: 400px;
+}
+
+.moon {
+    position: absolute;
+    background-image: url('https://i.imgur.com/WK2GMkp.png'); /* Изображение луны */
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    right: 50px;
+}
+
+/* Стили для задач */
+.task {
+    padding: 10px;
+    background-color: #444; /* Цвет задачи в ночном режиме */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.task:hover {
+    transform: scale(1.05);
+}
+
+.task-text {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+    color: #fff; /* Цвет текста задачи */
+}
+
+.delete-task {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff6b6b;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.delete-task:hover {
+    transform: scale(1.2);
+}
+
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked ~ .checkmark::after {
+    display: block;
+}
+
+.checkbox-container .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid #007bff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Общий стиль для задач */
+.quadrant ul li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #fff; /* Цвет текста задачи */
+}
+
+/* Стиль для галочки */
+.quadrant ul li input[type='checkbox'] {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+/* Стиль для текста задачи */
+.quadrant ul li span {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* Стиль для выполненной задачи */
+.quadrant ul li.checked span {
+    text-decoration: line-through;
+    color: #aaa; /* Цвет зачеркивания */
+}
+
+/* Стиль для кнопки удаления задачи */
+.quadrant ul li .delete-task {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff4444; /* Цвет крестика */
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Показываем кнопку удаления при наведении на задачу */
+.quadrant ul li:hover .delete-task {
+    opacity: 1;
+}
