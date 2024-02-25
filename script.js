@@ -86,4 +86,21 @@ $(document).ready(function(){
     // Пример использования функции для показа сообщения
     showMotivationMessage("Привет! Давай начнем работу!");
 });
-
+// Добавьте этот код, если хотите, чтобы кнопки открывали соответствующие профили в новой вкладке
+document.querySelectorAll('.social-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        const url = window.location.href;
+        const network = this.getAttribute('class').split(' ')[1]; // Определение социальной сети
+        switch (network) {
+            case 'instagram':
+                window.open('https://www.instagram.com/', '_blank');
+                break;
+            case 'telegram':
+                window.open('https://t.me/', '_blank');
+                break;
+            default:
+                break;
+        }
+    });
+});
