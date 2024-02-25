@@ -1,5 +1,86 @@
 /* Общие стили */
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Замените 'background.jpg' на путь к вашему фоновому изображению */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для шапки */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff; /* Цвет текста шапки */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px; /* Размер заголовка */
+}
+
+/* Стили для меню */
+.menu {
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: #555;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Общие стили */
+body {
     font-family: 'Arial', sans-serif;
     background-color: #0a0a23; /* Цвет фона в ночном режиме */
     color: #fff; /* Цвет текста в ночном режиме */
@@ -306,4 +387,94 @@ ul {
 /* Показываем кнопку удаления при наведении на задачу */
 .quadrant ul li:hover .delete-task {
     opacity: 1;
+}
+/* Пример медиа-запроса для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Расположение элементов в столбец */
+    }
+
+    .menu {
+        margin-top: 20px; /* Отступ от заголовка */
+    }
+
+    .menu ul li {
+        display: block; /* Размещаем пункты меню в столбец */
+        margin: 10px 0; /* Добавляем отступы между пунктами меню */
+    }
+}
+/* Стили для выплывающего списка */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Стили для иконок */
+.fa-caret-down {
+    margin-left: 5px;
+}
+/* Стили для кнопок социальных сетей */
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: #007bff; /* Цвет кнопки */
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+.instagram { background-color: #e4405f; }
+.telegram { background-color: #0088cc; }
+/* Стили для контейнера кнопок */
+.social-buttons {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    margin-top: 20px;
 }
